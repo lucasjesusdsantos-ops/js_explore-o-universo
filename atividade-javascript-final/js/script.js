@@ -30,7 +30,6 @@ function atualizarContador() {
 tarefas.forEach(function (tarefa) {
 
    const indicador = tarefa.querySelector(".indicador-estado");
-
    const botao = tarefa.querySelector(".botao-avancar");
 
    botao.addEventListener("click", function () {
@@ -38,43 +37,28 @@ tarefas.forEach(function (tarefa) {
        if (tarefa.classList.contains("tarefa-pendente")) {
 
            tarefa.classList.remove("tarefa-pendente");
-
            tarefa.classList.add("tarefa-andamento");
-
            indicador.classList.remove("estado-pendente");
-
            indicador.classList.add("estado-andamento");
-
            indicador.textContent = "Em andamento";
-
            botao.textContent = "Concluir tarefa";
 
        } else if (tarefa.classList.contains("tarefa-andamento")) {
 
            tarefa.classList.remove("tarefa-andamento");
-
            tarefa.classList.add("tarefa-concluida");
-
            indicador.classList.remove("estado-andamento");
-
            indicador.classList.add("estado-concluida");
-
            indicador.textContent = "Concluída";
-
            botao.textContent = "Recomeçar tarefa";
 
        } else if (tarefa.classList.contains("tarefa-concluida")) {
 
            tarefa.classList.remove("tarefa-concluida");
-
            tarefa.classList.add("tarefa-pendente");
-
            indicador.classList.remove("estado-concluida");
-
            indicador.classList.add("estado-pendente");
-
            indicador.textContent = "Pendente";
-
            botao.textContent = "Iniciar tarefa";
 
        }
@@ -104,6 +88,5 @@ botaoMotivacao.addEventListener("click", function () {
    let numero = Math.floor(Math.random() * frases.length);
 
    mensagem.textContent = frases[numero];
-
 });
  
